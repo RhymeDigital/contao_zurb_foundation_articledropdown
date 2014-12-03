@@ -1,0 +1,3 @@
+<div id="<?php echo $this->id; ?>" class="tiny small medium large content f-dropdown" data-dropdown-content>
+    <?php echo $this->article; ?>
+</div>

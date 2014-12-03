@@ -1,0 +1,9 @@
+
+<ul class="<?php if(preg_match('/level_1/', $this->level)): echo 'left '; else : echo 'dropdown '; endif; echo $this->level; ?>">
+  <?php foreach ($this->items as $item): ?>
+  <?php if($item['isActive']): $item['class'] .= (!empty($item['class']) ? ' ' : '') . 'active'; endif; ?>
+      <li<?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?>>
+        <a <?php if($item['dropdownarticle']): ?> data-options="<?php echo $item['navdataoptions'] ?: 'is_hover:true'; ?>" data-dropdown="<?php echo $item['dropdownarticle']; ?>"<?php endif;?>href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>"<?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?><?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?><?php if ($item['tabindex']): ?> tabindex="<?php echo $item['tabindex']; ?>"<?php endif; ?><?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?php echo $item['target']; ?>><?php echo $item['link']; ?></a>
+      </li>
+  <?php endforeach; ?>
+</ul>
